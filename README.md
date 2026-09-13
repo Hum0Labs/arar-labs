@@ -7,10 +7,10 @@ Producción: **https://labs.arar.com.co**
 
 | | |
 |---|---|
-| Framework | Next.js 15 (App Router) |
+| Framework | Next.js 16 (App Router) |
 | Lenguaje | TypeScript, modo estricto |
 | Estilos | Tailwind CSS 3 |
-| Tipografía | Newsreader + IBM Plex Sans vía `next/font` (self-hosted en build) |
+| Tipografía | Archivo (titulares) + Source Serif 4 (texto) vía `next/font` |
 | Hosting | Vercel (estático — la página no tiene backend) |
 
 ## Desarrollo
@@ -37,20 +37,23 @@ un componente. Los componentes no llevan texto embebido.
 
 ## Diseño
 
-Tinta sobre papel, un solo tema (claro) por decisión. La paleta es corta a propósito:
-dos tintas, dos líneas, un acento óxido que aparece tres veces en toda la página.
+Dirección **editorial**: tinta sobre papel, un solo tema claro. La paleta es corta
+a propósito — dos tintas, dos líneas y un acento óxido.
 
-La idea visual es **la hoja de cálculo que se le quedó chica al negocio**: la reja del
-héroe es una hoja de Excel con restos reales (`#¡REF!`, `BUSCARV`, `informe_final_v7_REAL.xlsx`)
-que se disuelve a medida que el visitante baja y la página se vuelve estructura limpia.
-La página hace lo que la empresa vende.
+- Titulares en Archivo extrabold, escala grande y tracking negativo.
+- Rótulos numerados (`01`–`06`) bajo reglas gruesas: el número marca el orden del argumento.
+- Servicios en rejilla de tres columnas; los cuatro pasos del método como fichas
+  separadas por filetes.
+- **Una sola banda invertida** (tinta a toda página) en *Por qué importa*. Es el
+  único momento fuerte y se gasta una vez.
 
 El orden de las secciones es el argumento: problema → qué hacemos → cómo funciona →
 prueba → por qué importa → siguiente paso.
 
 ## Accesibilidad y rendimiento
 
-- Sin imágenes ni JavaScript de terceros. Un solo componente cliente (`Reveal`).
+- **Cero JavaScript de cliente.** No hay componentes `'use client'`, ni imágenes,
+  ni scripts de terceros. La única animación es CSS al cargar.
 - `prefers-reduced-motion` respetado: sin animación y sin scroll suave.
 - Foco visible en todo elemento interactivo.
 - Los adornos de la reja son `aria-hidden` y se ocultan en móvil.
@@ -61,6 +64,9 @@ prueba → por qué importa → siguiente paso.
 - [ ] Confirmar o quitar `responder` (hoy `Daniel Junco`)
 - [ ] Confirmar el piso de precio del diagnóstico (hoy COP 8 millones, en `content/site.ts`)
 - [ ] Añadir trabajo real de cliente en `proof` — hoy solo está Fiel, producto propio
+- [ ] Rellenar `legalName` y `nit` en `content/site.ts` — un comprador colombiano los busca
+- [ ] Rellenar `responderLinkedIn` — es la señal de confianza más barata que tenemos
+- [ ] Añadir los años de operación de Arar en `proof.parent.meta`
 - [ ] Apuntar `labs.arar.com.co` a Vercel (CNAME)
 - [ ] Añadir analítica si se quiere (Plausible o Vercel Analytics)
 

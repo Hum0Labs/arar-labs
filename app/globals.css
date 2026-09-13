@@ -7,12 +7,6 @@
     scroll-behavior: smooth;
   }
 
-  body {
-    background-color: theme('colors.paper');
-    color: theme('colors.ink');
-    -webkit-font-smoothing: antialiased;
-  }
-
   ::selection {
     background-color: theme('colors.ink');
     color: theme('colors.paper');
@@ -25,35 +19,20 @@
 }
 
 @layer components {
-  /* Una regla medida: precisión, no adorno. Se traza una vez al cargar. */
-  .measure-rule {
-    height: 1px;
-    max-width: 22rem;
-    background-color: theme('colors.rule-strong');
-    transform-origin: left;
-    animation: draw 1s cubic-bezier(0.2, 0.7, 0.3, 1) 0.35s both;
+  /* Una sola entrada, al cargar. Sin JavaScript. */
+  .enter {
+    animation: enter 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) both;
   }
 
-  @keyframes draw {
+  @keyframes enter {
     from {
-      transform: scaleX(0);
+      opacity: 0;
+      transform: translateY(0.5rem);
     }
     to {
-      transform: scaleX(1);
+      opacity: 1;
+      transform: none;
     }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(0.75rem);
-    transition:
-      opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1),
-      transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
-  }
-
-  .reveal[data-shown='true'] {
-    opacity: 1;
-    transform: none;
   }
 }
 
@@ -62,13 +41,7 @@
     scroll-behavior: auto;
   }
 
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .measure-rule {
+  .enter {
     animation: none;
   }
 }

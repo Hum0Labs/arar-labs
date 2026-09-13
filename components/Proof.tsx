@@ -1,38 +1,34 @@
-import { Reveal } from '@/components/Reveal'
-import { Section } from '@/components/Section'
+import { Rubric } from '@/components/Rubric'
 import { proof } from '@/content/site'
 
 export function Proof() {
   return (
-    <Section id="prueba" label={proof.label}>
-      <Reveal>
-        <p className="font-display text-2xl">{proof.title}</p>
-      </Reveal>
-
-      {[proof.work, proof.parent].map((item, i) => (
-        <Reveal key={item.name} delay={i * 70}>
-          <article className="grid gap-2">
-            <span className="text-xs uppercase tracking-[0.08em]">{item.meta}</span>
-            <h3 className="font-display text-xl">{item.name}</h3>
-            <p className="max-w-[56ch] text-ink-soft">{item.body}</p>
+    <section id="prueba" className="scroll-mt-8 py-16 lg:py-20">
+      <Rubric n="04" label={proof.label} />
+      <div className="grid gap-10 lg:grid-cols-12">
+        {[proof.work, proof.parent].map((item) => (
+          <article key={item.name} className="col-span-full grid content-start gap-3 lg:col-span-5">
+            <span className="font-display text-[0.7rem] uppercase tracking-[0.14em] text-ink-soft">
+              {item.meta}
+            </span>
+            <h3 className="font-display text-3xl font-bold tracking-tight">{item.name}</h3>
+            <p className="leading-relaxed">{item.body}</p>
           </article>
-        </Reveal>
-      ))}
+        ))}
 
-      <Reveal>
-        <div className="grid gap-4 border-t border-rule pt-8">
-          <h3 className="text-[0.6875rem] uppercase tracking-[0.2em] text-ink-soft">
+        <div className="col-span-full lg:col-span-2">
+          <h3 className="mb-3 font-display text-[0.7rem] uppercase tracking-[0.18em] text-ink-soft">
             {proof.refusalsTitle}
           </h3>
-          <ul className="grid gap-3">
+          <ul className="grid gap-2">
             {proof.refusals.map((line) => (
-              <li key={line} className="max-w-[44ch] font-display text-lg">
+              <li key={line} className="text-[0.95rem] leading-snug">
                 {line}
               </li>
             ))}
           </ul>
         </div>
-      </Reveal>
-    </Section>
+      </div>
+    </section>
   )
 }

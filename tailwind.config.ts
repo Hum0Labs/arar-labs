@@ -1,8 +1,8 @@
 import type { Config } from 'tailwindcss'
 
 /**
- * Ink on paper. Single theme by intention — see README.
- * The palette is deliberately narrow: two inks, two rules, one oxide accent.
+ * Tinta sobre papel, un solo tema. La paleta es corta a propósito:
+ * dos tintas, dos líneas y un acento óxido.
  */
 const config: Config = {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './content/**/*.{ts,tsx}'],
@@ -17,11 +17,8 @@ const config: Config = {
         oxide: '#7A2E1E',
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Georgia', 'Times New Roman', 'serif'],
-        sans: ['var(--font-sans)', 'Helvetica Neue', 'Arial', 'sans-serif'],
-      },
-      maxWidth: {
-        measure: '40rem',
+        display: ['var(--font-display)', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        body: ['var(--font-body)', 'Georgia', 'Times New Roman', 'serif'],
       },
     },
   },

@@ -1,21 +1,22 @@
 import type { Metadata } from 'next'
-import { IBM_Plex_Sans, IBM_Plex_Serif } from 'next/font/google'
+import { Archivo, Source_Serif_4 } from 'next/font/google'
 
 import { hero, site } from '@/content/site'
 
 import './globals.css'
 
-const display = IBM_Plex_Serif({
+/** Archivo para titulares y rótulos; Source Serif para el texto que se lee. */
+const display = Archivo({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['500', '700', '800'],
   variable: '--font-display',
   display: 'swap',
 })
 
-const sans = IBM_Plex_Sans({
+const body = Source_Serif_4({
   subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-sans',
+  weight: ['400', '600'],
+  variable: '--font-body',
   display: 'swap',
 })
 
@@ -39,8 +40,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${display.variable} ${sans.variable}`}>
-      <body className="font-sans text-base leading-relaxed">{children}</body>
+    <html lang="es" className={`${display.variable} ${body.variable}`}>
+      <body className="bg-paper font-body text-ink">{children}</body>
     </html>
   )
 }

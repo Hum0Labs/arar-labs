@@ -1,25 +1,21 @@
-import { Reveal } from '@/components/Reveal'
-import { Section } from '@/components/Section'
+import { Rubric } from '@/components/Rubric'
 import { services } from '@/content/site'
 
 export function Services() {
   return (
-    <Section id="servicios" label={services.label}>
-      <Reveal>
-        <p className="font-display text-2xl">{services.title}</p>
-      </Reveal>
-
-      <div className="grid gap-9">
-        {services.items.map((item, i) => (
-          <Reveal key={item.name} delay={i * 70}>
-            <article className="grid gap-2">
-              <span className="text-xs uppercase tracking-[0.08em] tabular-nums">{item.meta}</span>
-              <h3 className="font-display text-xl">{item.name}</h3>
-              <p className="max-w-[56ch] text-ink-soft">{item.body}</p>
-            </article>
-          </Reveal>
+    <section id="servicios" className="scroll-mt-8 py-16 lg:py-20">
+      <Rubric n="02" label={services.label} />
+      <div className="grid gap-10 sm:grid-cols-3">
+        {services.items.map((item) => (
+          <article key={item.name} className="grid content-start gap-3">
+            <span className="font-display text-[0.7rem] uppercase tracking-[0.14em] text-ink-soft">
+              {item.meta}
+            </span>
+            <h3 className="font-display text-2xl font-bold tracking-tight">{item.name}</h3>
+            <p className="leading-relaxed">{item.body}</p>
+          </article>
         ))}
       </div>
-    </Section>
+    </section>
   )
 }

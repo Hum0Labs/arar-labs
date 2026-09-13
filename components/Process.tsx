@@ -1,35 +1,25 @@
-import { Reveal } from '@/components/Reveal'
-import { Section } from '@/components/Section'
+import { Rubric } from '@/components/Rubric'
 import { process } from '@/content/site'
 
-/** Aquí la numeración sí dice algo: el orden es el método. */
+/** Aquí la numeración dice algo: el orden es el método. */
 export function Process() {
   return (
-    <Section id="como-funciona" label={process.label}>
-      <Reveal>
-        <p className="font-display text-2xl">{process.title}</p>
-      </Reveal>
-
-      <ol className="grid gap-9">
+    <section id="como-funciona" className="scroll-mt-8 py-16 lg:py-20">
+      <Rubric n="03" label={process.label} />
+      <ol className="grid gap-px bg-rule sm:grid-cols-2 lg:grid-cols-4">
         {process.steps.map((step, i) => (
-          <li key={step.name}>
-            <Reveal delay={i * 70}>
-              <div className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-4">
-                <span className="pt-1 font-display text-sm tabular-nums text-oxide">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <div className="grid gap-2">
-                  <span className="text-xs uppercase tracking-[0.08em] tabular-nums text-ink-soft">
-                    {step.meta}
-                  </span>
-                  <h3 className="font-display text-xl">{step.name}</h3>
-                  <p className="max-w-[54ch] text-ink-soft">{step.body}</p>
-                </div>
-              </div>
-            </Reveal>
+          <li key={step.name} className="grid content-start gap-3 bg-paper p-6">
+            <span className="font-display text-4xl font-extrabold tabular-nums text-oxide">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 className="font-display text-xl font-bold tracking-tight">{step.name}</h3>
+            <span className="font-display text-[0.7rem] uppercase tracking-[0.14em] text-ink-soft">
+              {step.meta}
+            </span>
+            <p className="text-[0.95rem] leading-relaxed">{step.body}</p>
           </li>
         ))}
       </ol>
-    </Section>
+    </section>
   )
 }
