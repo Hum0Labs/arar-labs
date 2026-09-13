@@ -14,16 +14,19 @@ export const site = {
 
 export const hero = {
   eyebrow: 'Ingeniería de software y datos · Bogotá',
-  headline: 'Cuando el Excel ya no da, no siempre la respuesta es un ERP.',
+  // Alternativas consideradas, por si se quiere cambiar:
+  //   'No todo problema de operación se resuelve con un sistema nuevo.'
+  //   'Ingeniería para operaciones que crecieron más rápido que sus herramientas.'
+  headline: 'El proceso primero. El software, si hace falta.',
   standfirst:
-    'Somos el equipo de ingeniería de las empresas que crecieron más rápido que sus hojas de cálculo. Entendemos el proceso, quitamos el trabajo manual y construimos solo lo que hace falta.',
+    'Entendemos cómo trabaja de verdad su operación, quitamos el trabajo manual que la frena y construimos únicamente lo que el negocio necesita. Un proyecto a la vez.',
   primary: { label: 'Cómo funciona', href: '#como-funciona' },
   secondary: { label: 'Escríbanos', href: '#contacto' },
 } as const
 
 export const problem = {
   label: 'El problema',
-  title: 'No es que falte tecnología. Es que el negocio creció y nadie rediseñó cómo se mueve la información.',
+  title: 'Casi nunca falta tecnología. Lo que pasa es que el negocio creció y nadie volvió a mirar cómo se mueve la información.',
   symptoms: [
     'El informe que pide la gerencia cada mes lo arma una persona a mano, y se demora tres días.',
     'Cada área tiene su propio archivo, y ninguno cuadra con el otro.',
@@ -34,12 +37,12 @@ export const problem = {
 
 export const services = {
   label: 'Qué hacemos',
-  title: 'Tres cosas. Nada más.',
+  title: 'Tres cosas.',
   items: [
     {
       name: 'Diagnóstico',
       meta: 'Dos semanas · precio cerrado',
-      body: 'Levantamos el proceso y los datos como funcionan de verdad, no como dice el manual. Sale un informe escrito: qué está roto, qué se arregla sin software y qué sí vale la pena construir.',
+      body: 'Miramos el proceso y los datos como funcionan de verdad, no como dice el manual. Queda un informe escrito: qué está roto, qué se arregla sin software y qué sí vale la pena construir.',
     },
     {
       name: 'Automatización',
@@ -49,7 +52,7 @@ export const services = {
     {
       name: 'Software a la medida',
       meta: 'Web o móvil · entregado y documentado',
-      body: 'La aplicación que el negocio necesita, construida sobre el proceso real y sobre los datos que ya existen.',
+      body: 'La aplicación que el negocio necesita, construida sobre el proceso real y sobre los datos que ya tiene.',
     },
   ],
 } as const
@@ -83,11 +86,11 @@ export const process = {
 
 export const proof = {
   label: 'Prueba',
-  title: 'Lo que hemos construido, y con qué estándar.',
+  title: 'Lo que hemos construido.',
   work: {
     name: 'Fiel',
     meta: 'Producto propio · en piloto en Bogotá',
-    body: 'Programa de fidelización para cadenas de tiendas de barrio. Una tarjeta digital para el cliente y, para el dueño, la respuesta a una pregunta que hoy nadie le contesta: cuáles de sus clientes fieles se están yendo, y de cuál tienda.',
+    body: 'Programa de fidelización para cadenas de tiendas de barrio. Una tarjeta digital para el cliente y, para el dueño, la respuesta a una pregunta que hoy nadie le contesta: cuáles de sus clientes fieles se están yendo, y de cuál tienda. Lo construimos nosotros y hoy está en piloto.',
   },
   parent: {
     name: 'Arar',
