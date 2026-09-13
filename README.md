@@ -11,7 +11,7 @@ Producción: **https://labs.arar.com.co**
 | Lenguaje | TypeScript, modo estricto |
 | Estilos | Tailwind CSS 3 |
 | Tipografía | Archivo (titulares) + Source Serif 4 (texto) vía `next/font` |
-| Hosting | Vercel (estático — la página no tiene backend) |
+| Hosting | GitHub Pages (exportación estática, sin backend) |
 
 ## Desarrollo
 
@@ -58,6 +58,31 @@ prueba → por qué importa → siguiente paso.
 - Foco visible en todo elemento interactivo.
 - Los adornos de la reja son `aria-hidden` y se ocultan en móvil.
 
+## Despliegue — GitHub Pages
+
+Cada push a `main` dispara `.github/workflows/deploy.yml`: typecheck, lint, build,
+y publica `out/` en Pages. No hay paso manual.
+
+### Configuración por única vez
+
+1. **Repo → Settings → Pages → Build and deployment → Source: GitHub Actions.**
+   Sin esto el workflow corre y falla al desplegar. Es lo único que no se puede
+   hacer desde el código.
+2. **DNS en `arar.com.co`:** registro `CNAME` con nombre `labs` apuntando a
+   `hum0labs.github.io.` (con el punto final).
+3. Esperar a que GitHub valide el dominio y activar **Enforce HTTPS** en Settings → Pages.
+
+### Detalles que importan
+
+- **`out/.nojekyll`** lo crea el workflow. Sin ese archivo, Pages pasa el sitio por
+  Jekyll, Jekyll ignora las carpetas que empiezan por guion bajo y desaparece todo
+  `/_next`: la página carga sin estilos ni tipografías.
+- **`public/CNAME`** contiene el dominio y Next lo copia a `out/`. Si se borra, Pages
+  pierde el dominio propio en el siguiente despliegue.
+- **`trailingSlash: true`** ya está puesto: Pages sirve directorios, no reescribe rutas.
+- **Previsualizar sin dominio propio** en `hum0labs.github.io/arar-labs`:
+  `PAGES_BASE_PATH=/arar-labs npm run build`. En producción no se usa.
+
 ## Pendientes antes de publicar
 
 - [ ] Confirmar `email` en `content/site.ts` (hoy `labs@arar.com.co`)
@@ -67,7 +92,9 @@ prueba → por qué importa → siguiente paso.
 - [ ] Rellenar `legalName` y `nit` en `content/site.ts` — un comprador colombiano los busca
 - [ ] Rellenar `responderLinkedIn` — es la señal de confianza más barata que tenemos
 - [ ] Añadir los años de operación de Arar en `proof.parent.meta`
-- [ ] Apuntar `labs.arar.com.co` a Vercel (CNAME)
+- [ ] Activar Pages con Source: GitHub Actions
+- [ ] CNAME `labs` → `hum0labs.github.io.` en el DNS de arar.com.co
+- [ ] Activar Enforce HTTPS cuando GitHub valide el dominio
 - [ ] Añadir analítica si se quiere (Plausible o Vercel Analytics)
 
 ## Reglas de contenido
