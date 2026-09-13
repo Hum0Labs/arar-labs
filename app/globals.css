@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: theme('colors.paper');
+    color: theme('colors.ink');
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: theme('colors.ink');
+    color: theme('colors.paper');
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.oxide');
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Una regla medida: precisión, no adorno. Se traza una vez al cargar. */
+  .measure-rule {
+    height: 1px;
+    max-width: 22rem;
+    background-color: theme('colors.rule-strong');
+    transform-origin: left;
+    animation: draw 1s cubic-bezier(0.2, 0.7, 0.3, 1) 0.35s both;
+  }
+
+  @keyframes draw {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1),
+      transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+
+  .reveal[data-shown='true'] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .measure-rule {
+    animation: none;
+  }
+}
