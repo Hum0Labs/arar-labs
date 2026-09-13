@@ -109,9 +109,11 @@ export const experience = {
     'Universidades',
   ],
   work: {
-    name: 'Fiel',
-    meta: 'Producto propio · en piloto en Bogotá',
-    body: 'Programa de fidelización para cadenas de tiendas de barrio. Una tarjeta digital para el cliente y, para el dueño, la respuesta a una pregunta que hoy nadie le contesta: cuáles de sus clientes fieles se están yendo, y de cuál tienda. Lo construimos nosotros y hoy está en piloto.',
+    name: 'NativoOne',
+    // TODO: si son publicables, añadir año de inicio y número de empresas —
+    // serían el dato más fuerte de toda la página. No publicar sin confirmar.
+    meta: 'Producto propio · ERP en la nube para pymes colombianas',
+    body: 'ERP construido para el contexto colombiano y no adaptado desde afuera: facturación electrónica ante la DIAN, nómina electrónica, inventario y contabilidad sobre los mismos datos, sin conciliaciones a fin de mes. Lo diseñamos y lo construimos nosotros — por eso sabemos con precisión cuándo una empresa necesita un ERP y, sobre todo, cuándo no.',
   },
   parent: {
     name: 'Arar',
