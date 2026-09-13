@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { IBM_Plex_Sans, Newsreader } from 'next/font/google'
 
-import { site } from '@/content/site'
+import { hero, site } from '@/content/site'
 
 import './globals.css'
 
@@ -19,15 +19,17 @@ const sans = IBM_Plex_Sans({
   display: 'swap',
 })
 
+// La descripción sale del mismo copy que ve el visitante: si cambia el titular,
+// cambian también los resultados de búsqueda y las previsualizaciones de enlace.
+const description = `${hero.headline} ${hero.standfirst}`
+
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${site.domain}`),
   title: 'Arar Labs',
-  description:
-    'Ingeniería de software y datos para empresas colombianas que crecieron más rápido que sus hojas de cálculo. Diagnóstico, automatización y software a la medida.',
+  description,
   openGraph: {
     title: 'Arar Labs',
-    description:
-      'Cuando el Excel ya no da, no siempre la respuesta es un ERP. Diagnóstico, automatización y software a la medida.',
+    description,
     url: `https://${site.domain}`,
     siteName: 'Arar Labs',
     locale: 'es_CO',
