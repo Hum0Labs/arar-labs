@@ -26,15 +26,36 @@ export function Experience() {
       </ul>
 
       <div className="mt-14 grid gap-10 lg:grid-cols-12">
-        {[experience.work, experience.parent].map((item) => (
-          <article key={item.name} className="col-span-full grid content-start gap-3 lg:col-span-5">
-            <span className="font-display text-[0.7rem] uppercase tracking-[0.14em] text-ink-soft">
-              {item.meta}
-            </span>
-            <h3 className="font-display text-2xl font-bold tracking-tight">{item.name}</h3>
-            <p className="leading-relaxed">{item.body}</p>
-          </article>
-        ))}
+        <article className="col-span-full grid content-start gap-3 lg:col-span-4">
+          <span className="font-display text-[0.7rem] uppercase tracking-[0.14em] text-ink-soft">
+            {experience.work.meta}
+          </span>
+          <h3 className="font-display text-2xl font-bold tracking-tight">
+            {experience.work.name}
+          </h3>
+          <p className="leading-relaxed">{experience.work.body}</p>
+        </article>
+
+        <article className="col-span-full grid content-start gap-3 lg:col-span-6">
+          <span className="font-display text-[0.7rem] uppercase tracking-[0.14em] text-ink-soft">
+            {experience.parent.meta}
+          </span>
+          <h3 className="font-display text-2xl font-bold tracking-tight">
+            {experience.parent.name}
+          </h3>
+          <p className="leading-relaxed">{experience.parent.body}</p>
+
+          <dl className="mt-2 grid gap-0">
+            {experience.parent.lines.map((line) => (
+              <div key={line.name} className="border-t border-rule py-3 last:border-b">
+                <dt className="font-display text-sm font-bold tracking-tight">{line.name}</dt>
+                <dd className="text-[0.95rem] leading-snug text-ink-soft">{line.body}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <p className="text-[0.95rem] text-ink-soft">{experience.parent.closing}</p>
+        </article>
 
         <div className="col-span-full lg:col-span-2">
           <h3 className="mb-3 font-display text-[0.7rem] uppercase tracking-[0.18em] text-ink-soft">

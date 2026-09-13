@@ -118,7 +118,22 @@ export const experience = {
   parent: {
     name: 'Arar',
     meta: 'Casa matriz', // TODO: añadir años de operación — 'Desde 20XX' da más confianza que cualquier adjetivo
-    body: 'Arar es una consultoría SAP que trabaja con empresas grandes en Colombia. Arar Labs es su división de software y datos: Arar acompaña a las que ya viven en SAP; nosotros, a las que todavía no. La misma gente, el mismo estándar, otro tipo de problema.',
+    body: 'Arar no es solo una consultoría: es un grupo que opera tres frentes en Colombia. Arar Labs es el de software y datos.',
+    lines: [
+      {
+        name: 'Consultoría SAP',
+        body: 'Acompañamiento funcional a empresas grandes que ya viven en SAP.',
+      },
+      {
+        name: 'Alquiler de equipos',
+        body: 'Portátiles, computadores e impresoras en arriendo, con parque administrado y facturación mensual. El software que administra ese parque lo construimos nosotros.',
+      },
+      {
+        name: 'Arar Labs',
+        body: 'Software y datos para las empresas que todavía no están en SAP.',
+      },
+    ],
+    closing: 'La misma gente y el mismo estándar en los tres.',
   },
   refusalsTitle: 'Lo que no hacemos',
   refusals: [
