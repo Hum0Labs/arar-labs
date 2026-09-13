@@ -1,11 +1,11 @@
 import { Colophon } from '@/components/Colophon'
 import { Contact } from '@/components/Contact'
 import { Container } from '@/components/Container'
+import { Experience } from '@/components/Experience'
 import { Hero } from '@/components/Hero'
 import { Masthead } from '@/components/Masthead'
 import { Problem } from '@/components/Problem'
 import { Process } from '@/components/Process'
-import { Proof } from '@/components/Proof'
 import { Services } from '@/components/Services'
 import { Stakes } from '@/components/Stakes'
 
@@ -24,7 +24,7 @@ export default function Home() {
         <Problem />
         <Services />
         <Process />
-        <Proof />
+        <Experience />
       </Container>
 
       <Stakes />

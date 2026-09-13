@@ -93,9 +93,21 @@ export const process = {
   ],
 } as const
 
-export const proof = {
-  label: 'Prueba',
-  title: 'Lo que hemos construido.',
+export const experience = {
+  label: 'Experiencia',
+  title: 'Ingenieros que ya construyeron esto antes, en sectores muy distintos.',
+  body: 'No es una empresa nueva con gente nueva. Nuestros ingenieros llevan años entregando software en producción, y haber visto cómo opera un sector tras otro es justamente lo que permite entender un proceso ajeno en dos semanas y no en seis meses.',
+  /** Sectores donde el equipo ha trabajado. Solo se lista lo que es cierto. */
+  sectors: [
+    'Comercio electrónico',
+    'SAP y ABAP',
+    'Tecnología educativa',
+    'Salud',
+    'Ferreterías',
+    'Droguerías',
+    'Sector público',
+    'Universidades',
+  ],
   work: {
     name: 'Fiel',
     meta: 'Producto propio · en piloto en Bogotá',
