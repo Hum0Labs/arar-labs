@@ -8,7 +8,7 @@ export function Stakes() {
       <div className="grid gap-5">
         {stakes.lines.map((line, i) => (
           <Reveal key={line} delay={i * 90}>
-            <p className="max-w-[38ch] text-balance font-display text-xl font-light leading-snug sm:text-2xl">
+            <p className="max-w-[38ch] text-balance font-display text-xl leading-snug sm:text-2xl">
               {line}
             </p>
           </Reveal>

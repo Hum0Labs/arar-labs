@@ -6,7 +6,7 @@ export function Services() {
   return (
     <Section id="servicios" label={services.label}>
       <Reveal>
-        <p className="font-display text-2xl font-light">{services.title}</p>
+        <p className="font-display text-2xl">{services.title}</p>
       </Reveal>
 
       <div className="grid gap-9">

@@ -9,7 +9,13 @@ export const site = {
   city: 'Bogotá',
   email: 'labs@arar.com.co', // TODO: confirmar la dirección real
   responder: 'Daniel Junco', // TODO: confirmar o quitar
+  responderRole: 'Ingeniero de software', // TODO: confirmar el cargo
+  responderLinkedIn: '', // TODO: URL de LinkedIn — es el dato que más confianza da
   replyPromise: 'Respondemos en un día hábil.',
+  parentUrl: 'https://arar.com.co',
+  /** TODO: datos verificables. Un comprador colombiano los busca. */
+  legalName: '', // p. ej. 'Arar Labs S.A.S.'
+  nit: '', // p. ej. 'NIT 900.123.456-7'
 } as const
 
 export const hero = {
@@ -20,6 +26,9 @@ export const hero = {
   headline: 'El proceso primero. El software, si hace falta.',
   standfirst:
     'Entendemos cómo trabaja de verdad su operación, quitamos el trabajo manual que la frena y construimos únicamente lo que el negocio necesita. Un proyecto a la vez.',
+  /** El respaldo va arriba: es el dato verificable más fuerte que tenemos. */
+  backing:
+    'Somos la división de software y datos de Arar, consultoría SAP para empresas grandes en Colombia.',
   primary: { label: 'Cómo funciona', href: '#como-funciona' },
   secondary: { label: 'Escríbanos', href: '#contacto' },
 } as const
@@ -94,8 +103,8 @@ export const proof = {
   },
   parent: {
     name: 'Arar',
-    meta: 'Casa matriz',
-    body: 'Arar Labs es la división de software y datos de Arar, consultoría SAP para empresas grandes. Arar acompaña a las que ya viven en SAP. Arar Labs, a las que todavía no.',
+    meta: 'Casa matriz', // TODO: añadir años de operación — 'Desde 20XX' da más confianza que cualquier adjetivo
+    body: 'Arar es una consultoría SAP que trabaja con empresas grandes en Colombia. Arar Labs es su división de software y datos: Arar acompaña a las que ya viven en SAP; nosotros, a las que todavía no. La misma gente, el mismo estándar, otro tipo de problema.',
   },
   refusalsTitle: 'Lo que no hacemos',
   refusals: [

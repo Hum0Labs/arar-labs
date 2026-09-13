@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
-import { IBM_Plex_Sans, Newsreader } from 'next/font/google'
+import { IBM_Plex_Sans, IBM_Plex_Serif } from 'next/font/google'
 
 import { hero, site } from '@/content/site'
 
 import './globals.css'
 
-const display = Newsreader({
+const display = IBM_Plex_Serif({
   subsets: ['latin'],
-  weight: ['300', '400'],
+  weight: ['400', '500'],
   variable: '--font-display',
   display: 'swap',
 })

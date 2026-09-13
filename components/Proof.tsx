@@ -6,7 +6,7 @@ export function Proof() {
   return (
     <Section id="prueba" label={proof.label}>
       <Reveal>
-        <p className="font-display text-2xl font-light">{proof.title}</p>
+        <p className="font-display text-2xl">{proof.title}</p>
       </Reveal>
 
       {[proof.work, proof.parent].map((item, i) => (

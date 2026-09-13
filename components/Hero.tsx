@@ -13,13 +13,23 @@ export function Hero() {
       <div className="grid gap-8 pb-20 sm:pb-28 lg:pb-36">
         <p className="text-[0.6875rem] uppercase tracking-[0.2em] text-ink-soft">{hero.eyebrow}</p>
 
-        <h1 className="max-w-[18ch] text-balance font-display text-4xl font-light leading-[1.15] tracking-tight sm:text-5xl lg:text-[3.75rem]">
+        <h1 className="max-w-[18ch] text-balance font-display text-4xl leading-[1.15] tracking-tight sm:text-5xl lg:text-[3.75rem]">
           {hero.headline}
         </h1>
 
         <div className="measure-rule" aria-hidden="true" />
 
         <p className="max-w-[46ch] text-ink-soft">{hero.standfirst}</p>
+
+        <p className="max-w-[46ch] text-sm text-ink-soft">
+          {hero.backing}{' '}
+          <a
+            href={site.parentUrl}
+            className="border-b border-rule-strong transition-colors hover:border-oxide hover:text-oxide"
+          >
+            arar.com.co
+          </a>
+        </p>
 
         <div className="flex flex-wrap items-center gap-x-8 gap-y-3 pt-2">
           <a

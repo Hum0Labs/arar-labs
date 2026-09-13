@@ -17,7 +17,7 @@ const config: Config = {
         oxide: '#7A2E1E',
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Iowan Old Style', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'Georgia', 'Times New Roman', 'serif'],
         sans: ['var(--font-sans)', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       maxWidth: {

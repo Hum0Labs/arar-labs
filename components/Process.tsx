@@ -7,7 +7,7 @@ export function Process() {
   return (
     <Section id="como-funciona" label={process.label}>
       <Reveal>
-        <p className="font-display text-2xl font-light">{process.title}</p>
+        <p className="font-display text-2xl">{process.title}</p>
       </Reveal>
 
       <ol className="grid gap-9">
